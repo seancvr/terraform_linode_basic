@@ -13,6 +13,7 @@ source ./set_vars.sh
 | TF_VAR_linode_API_token | `Access token used by Terraform to connect to the Linode API` |
 | TF_VAR_ssh_public_key   | `SSH public key for authentication to the Linode instance` |
 | TF_VAR_root_password    | `Randomly generated root password` |
+| TF_VAR_firewall_id      | `ID of the firewall to attach to the Linode instance`|
 
 To avoid hardcoding secrets into Terraform configuration files, they are set as environment variables. Prefixing the environment variables with **TF_VAR_** allows Terraform to automatically assign them to the corresponding variables declared in **variables.tf**.
 

@@ -37,9 +37,9 @@ variable "root_password" {
 }
 
 variable "firewall_id" {
-  type = string
+  type        = string
   description = "cloud firewall id"
-  sensitive = true
+  sensitive   = true
 }
 
 
