@@ -15,7 +15,7 @@ variable "type" {
 
 variable "linode_API_token" {
   type        = string
-  description = "my linode API key"
+  description = "linode API token"
   sensitive   = true
 }
 

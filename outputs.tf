@@ -1,6 +1,6 @@
 output "instance_id" {
   value       = linode_instance.basicVM.id
-  description = "id of created linode"
+  description = "id of created instance"
 }
 
 output "instance_ip_addr" {

@@ -7,7 +7,7 @@ terraform {
     }
   }
 
-  # Set your API token
+  # Set API token
 }
 provider "linode" {
   token = var.linode_API_token
@@ -21,5 +21,5 @@ resource "linode_instance" "basicVM" {
   type            = var.type             //required
   authorized_keys = [var.ssh_public_key] //optional
   root_pass       = var.root_password    //optional
-  firewall_id     = 955709               //attach this instance to existing firewall
+  firewall_id     = 955709               //attach instance to existing firewall
 }
