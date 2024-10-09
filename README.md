@@ -1,5 +1,5 @@
 # Deploy basic cloud VM instance to Linode with Terraform
-This repository contains the Terraform configuration files and simple shell scripts to automate the deployment of a simple virtual machine instance to Linode cloud. 
+This repository contains the Terraform configuration files and shell scripts to automate the deployment of a simple virtual machine instance to Linode cloud. 
 
 ## Deployment steps
 
