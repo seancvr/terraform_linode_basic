@@ -1,3 +1,8 @@
+variable "os_version" {
+  type    = string
+  default = "linode/ubuntu22.04"
+}
+
 variable "label" {
   type    = string
   default = "ubuntuBox"
@@ -31,9 +36,10 @@ variable "root_password" {
   sensitive   = true
 }
 
-variable "os_version" {
-  type    = string
-  default = "linode/ubuntu22.04"
+variable "firewall_id" {
+  type = string
+  description = "cloud firewall id"
+  sensitive = true
 }
 
 
