@@ -59,9 +59,9 @@ If you no longer need to linode instance and want to clean up, simply run the **
 terraform destroy
 ```
 
-Finally if you want to unset the environment variables initialized earlier, use the unset.sh script.
+Finally if you want to unset the environment variables initialized earlier, use the unset_vars.sh script.
 ```bash
-source ./unset.sh
+source ./unset_vars.sh
 ```
 
 
