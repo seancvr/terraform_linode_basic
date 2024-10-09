@@ -14,26 +14,27 @@ source ./set_vars.sh
 | TF_VAR_ssh_public_key   | `SSH public key for authentication to the Linode instance` |
 | TF_VAR_root_password    | `Randomly generated root password` |
 
-In order to keep secrets out of .tf files, they are set as environment variables. Prefixing the environemt variables with TF_VAR_ allows terraform to automatically assign them the corresponding variables declared in variables.tf.
-e.g. TF_VAR_linode_API_token is assigned to the variable with the name "linode_API_token".
+To avoid hardcoding secrets into Terraform configuration files, they are set as environment variables. Prefixing the environment variables with **TF_VAR_** allows Terraform to automatically assign them to the corresponding variables declared in **variables.tf**.
+
+e.g. **TF_VAR_linode_API_token** is assigned to the variable with the name **linode_API_token**.
 
 ### Initialize Terraform configuration and deploy resources
 Terraform specifies a core workflow for initializing and deploying resources using the CLI. 
 
-First run the **init** command. This configures the backend, installs providers and providers and modules,  and creates the terraform.lock.hcl version lockfile.
+First run the **init** command. This configures the backend, installs providers and modules,  and creates the **terraform.lock.hcl** version lockfile.
 
 ```
 terraform init
 ```
 
-This is optional but I like the **fmt** command to tidy up the format of my configuration files.
+Optional but useful is the **fmt** command, which cleans up the format of the configuration files.
 ```
 terraform fmt
 ```
 
-Also optional but useful is the **validate** command. This command checks whether the configuration is syntactically valid and internally consistent, before terraform reaches out to any external provider API's.
+Also optional but useful is the **validate** command. This command checks whether the configuration is syntactically valid and internally consistent, before Terraform reaches out to any external provider API's.
 ```
-terrafrom validate
+terraform validate
 ```
 
 The next required command is **plan**. This creates an execution plan to deploy your specified resources, and lets you preview the changes that Terraform plans to make to your infrastructure.
@@ -41,7 +42,7 @@ The next required command is **plan**. This creates an execution plan to deploy 
 terraform plan
 ```
 
-The **plan** command executes actions proposed in the Terraform plan. Once executed Terraform will connect to Linode API and request the provisioning of the specified resources. After minute or two resources should be visible in Linode dashboard.
+The **apply** command executes actions proposed in the Terraform plan. Once executed Terraform will connect to Linode API and request the provisioning of the specified resources. Once complete, resources should be visible in the Linode dashboard.
 ```
 terraform apply
 ```
@@ -49,12 +50,11 @@ terraform apply
 ## Connect to virtual machine instance
 As per the out the **output.tf** file, the instance id and IP address should be output to the the terminal once complete. Use the IP address to connect to the newly created cloud machine.
 ```bash
-ssh root@<instance ip address>
+ssh root@<instance_ip_addr>
 ```
 
-
 ## Deprovision resources
-If you no longer need to linode instance and want to clean up, simply run the **destroy** command, and the resources will be deprovisioned. 
+If you no longer need to Linode instance and want to clean up, simply run the **destroy** command, and the resources will be deprovisioned. 
 ```
 terraform destroy
 ```
