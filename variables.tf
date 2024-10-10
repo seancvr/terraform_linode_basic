@@ -13,6 +13,7 @@ variable "region" {
   default = "us-central"
 }
 
+# see available types: https://api.linode.com/v4/linode/types
 variable "type" {
   type    = string
   default = "g6-standard-1"
