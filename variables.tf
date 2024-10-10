@@ -37,6 +37,7 @@ variable "root_password" {
   sensitive   = true
 }
 
+# find firewall id: https://api.linode.com/v4/linode/types
 variable "firewall_id" {
   type        = string
   description = "cloud firewall id"
