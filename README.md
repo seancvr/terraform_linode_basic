@@ -49,7 +49,7 @@ terraform apply
 ```
 
 ## Connect to virtual machine instance
-As per the out the **output.tf** file, the instance id and IP address should be output to the the terminal once complete. Use the IP address to connect to the newly created cloud machine.
+As per the **output.tf** file, the instance id and IP address should be output to the terminal once complete. Use the IP address to connect to the newly created cloud machine.
 ```bash
 ssh root@<instance_ip_addr>
 ```
