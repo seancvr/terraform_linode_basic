@@ -55,7 +55,7 @@ ssh root@<instance_ip_addr>
 ```
 
 ## Deprovision resources
-If you no longer need to Linode instance and want to clean up, simply run the **destroy** command, and the resources will be deprovisioned. 
+If you no longer need the Linode instance and want to clean up, simply run the **destroy** command, and the resources will be deprovisioned. 
 ```
 terraform destroy
 ```
