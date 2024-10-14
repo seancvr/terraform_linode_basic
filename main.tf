@@ -19,7 +19,7 @@ resource "linode_instance" "basicVM" {
   label           = var.label            //options
   region          = var.region           //required
   type            = var.type             //required
-  authorized_keys = [var.ssh_public_key] //optional
+  authorized_keys = [chomp(var.ssh_public_key)] //optional
   root_pass       = var.root_password    //optional
   firewall_id     = var.firewall_id      //attach instance to existing firewall
 }
